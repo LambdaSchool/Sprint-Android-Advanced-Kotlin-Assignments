@@ -1,6 +1,10 @@
-# Sprint-Android-Advanced-Kotlin
+# Sprint-Android-Advanced-Kotlin-Assignments
+
 
 ## Module 1: Advanced Git
+
+## Module 1: Git Fundamentals
+
 
 ## Module 2: Advanced Kotlin
 
