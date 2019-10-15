@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         get_notification.setOnClickListener {
             BasicNotificationBuilder.BasicNotification(this)
 
-            imageView.loadImageUrl("https://cdn.bulbagarden.net/upload/b/b8/025Pikachu_LG.png")
+            imageView.loadFromUrl("https://cdn.bulbagarden.net/upload/b/b8/025Pikachu_LG.png", this)
 
         }
 
