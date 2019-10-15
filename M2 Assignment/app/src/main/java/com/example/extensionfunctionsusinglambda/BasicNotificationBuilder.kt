@@ -1,5 +1,6 @@
 package com.example.extensionfunctionsusinglambda
 
+import android.annotation.SuppressLint
 import android.annotation.TargetApi
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -12,6 +13,7 @@ import com.example.extensionfunctionsusinglambda.MainActivity.Companion.NOTIFICA
 
 
 object BasicNotificationBuilder{
+    @SuppressLint("ResourceAsColor")
     @TargetApi(Build.VERSION_CODES.N)
     fun BasicNotification(context: Context) {
         //TODO 3
@@ -49,6 +51,7 @@ object BasicNotificationBuilder{
         val notificationBuilder = NotificationCompat.Builder(context, channelId)
             .setPriority(NotificationManager.IMPORTANCE_HIGH)
             .setSmallIcon(android.R.drawable.ic_menu_today)
+            .setColor(R.color.colorPrimary)
             .setContentTitle("Demo Notification")
             .setContentText("Here is the content text!!!")
             .setAutoCancel(true) // removes notification once used
