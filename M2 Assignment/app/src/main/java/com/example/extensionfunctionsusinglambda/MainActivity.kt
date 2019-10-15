@@ -21,9 +21,12 @@ class MainActivity : AppCompatActivity() {
             BasicNotificationBuilder.BasicNotification(this)
 
             imageView.onSuccess("https://cdn.bulbagarden.net/upload/b/b8/025Pikachu_LG.png", this)
-        
-            imageView.onFailure("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png", this)
-
+            if(imageView == null) {
+                imageView.onFailure(
+                    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png",
+                    this
+                )
+            }
 
         }
 
