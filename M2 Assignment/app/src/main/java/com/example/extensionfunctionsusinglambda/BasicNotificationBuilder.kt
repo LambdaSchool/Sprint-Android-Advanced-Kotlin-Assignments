@@ -52,7 +52,7 @@ object BasicNotificationBuilder{
             .setPriority(NotificationManager.IMPORTANCE_HIGH)
             .setSmallIcon(android.R.drawable.ic_menu_today)
             .setColor(R.color.colorPrimary)
-            .setContentTitle("Demo Notification")
+            .setContentTitle("This is my Notification")
             .setContentText("Here is the content text!!!")
             .setAutoCancel(true) // removes notification once used
             //pending intent
