@@ -18,9 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         get_notification.setOnClickListener {
-            BasicNotificationBuilder.BasicNotification(this)
 
             imageView.onSuccess("https://cdn.bulbagarden.net/upload/b/b8/025Pikachu_LG.png", this)
+            BasicNotificationBuilder.BasicNotification(this)
+
             if(imageView == null) {
                 imageView.onFailure(
                     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png",
