@@ -10,8 +10,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
+    private val hipHop = listOf(HipHop("Hot R&B"),
+                                HipHop("Hot Rap Songs"),
+                                HipHop("Rap AirPlay"))
+    private val rock = listOf(Rock("Alternative"),
+        Rock("Hard Rock"),
+        Rock("Death Metal"))
+    private val techno = listOf(Techno("Hot R&B"),
+        Techno("Hot Rap Songs"),
+        Techno("Rap AirPlay")
+    )
+    private lateinit var allList: MutableList<Genre>
 
-    private val allList = mutableListOf<Genre>()
+    //making a list type 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +37,6 @@ class MainActivity : AppCompatActivity() {
             layoutManager = viewManager
             adapter = recyclerViewAdapter
         }
-        allList.add(Genre("Techno"))
+
     }
 }
