@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_view.*
+import kotlin.properties.Delegates
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,8 +24,18 @@ class MainActivity : AppCompatActivity() {
     )
     private lateinit var allList: MutableList<Genre>
 
-    //making a list type 
-
+    //making a list type
+    private var listType: Genre by Delegates.observable(HipHop("")) { _, _: Genre, newList: Genre ->
+        allList = when (newList) {
+            is HipHop -> hipHop.toMutableList()
+            is Rock -> rock.toMutableList()
+            is Techno -> techno.toMutableList()
+        }
+        vTextView.text = allList.joinToString(", ") {
+            it.name
+        }
+        setTitleType(allList)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -39,4 +51,12 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+    private inline fun <reified T: Genre> setTitleType(genreList: List<T>){
+        when{
+            HipHop("") is T -> title = "hiphop"
+            Rock("") is T -> title = "rock"
+            Techno("") is T -> title = "techno"
+        }
+    }
 }
+
