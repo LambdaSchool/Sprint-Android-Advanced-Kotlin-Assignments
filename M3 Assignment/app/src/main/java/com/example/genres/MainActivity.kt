@@ -33,9 +33,9 @@ class MainActivity : AppCompatActivity() {
     private val rock = mutableListOf(Rock("Alternative"),
         Rock("Hard Rock"),
         Rock("Death Metal"))
-    private val techno = mutableListOf(Techno("Hot R&B"),
-        Techno("Hot Rap Songs"),
-        Techno("Rap AirPlay")
+    private val techno = mutableListOf(Techno("Electronic"),
+        Techno("House"),
+        Techno("Tempo")
     )
     private var allList = mutableListOf<Genre>()
 
@@ -69,8 +69,11 @@ class MainActivity : AppCompatActivity() {
             layoutManager = viewManager
             adapter = recyclerViewAdapter
         }
-
         allList.add(listType)
+        
+
+
+
     }
     private inline fun <reified T: Genre> setTitleType(genreList: List<T>){
         when{
@@ -90,8 +93,12 @@ class MainActivity : AppCompatActivity() {
             R.id.mHiphop -> textView.text = hipHop.joinToString(", ") {
                 it.name
             }
-            R.id.mRock -> rock
-            R.id.mTechno -> techno
+            R.id.mRock -> textView.text = rock.joinToString(", ") {
+                it.name
+            }
+            R.id.mTechno -> textView.text = techno.joinToString(", ") {
+                it.name
+            }
         }
 
 
