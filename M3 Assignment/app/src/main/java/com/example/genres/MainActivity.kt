@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter
     private lateinit var viewManager: RecyclerView.LayoutManager
     //private val allListRes = mutableListOf<Genre>()
-    private val hipHop = mutableListOf<Genre>(HipHop("Hot R&B"),
+    private val hipHop = mutableListOf(HipHop("Hot R&B"),
                                 HipHop("Hot Rap Songs"),
                                 HipHop("Rap AirPlay"))
-    private val rock = mutableListOf<Genre>(Rock("Alternative"),
+    private val rock = mutableListOf(Rock("Alternative"),
         Rock("Hard Rock"),
         Rock("Death Metal"))
-    private val techno = mutableListOf<Genre>(Techno("Hot R&B"),
+    private val techno = mutableListOf(Techno("Hot R&B"),
         Techno("Hot Rap Songs"),
         Techno("Rap AirPlay")
     )
@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
     //making a list type
     private var listType: Genre by Delegates.observable(HipHop("")) { _, _: Genre, newList: Genre ->
         allList = when (newList) {
-            is HipHop -> hipHop
-            is Rock -> rock
-            is Techno -> techno
+            is HipHop -> hipHop.toMutableList()
+            is Rock -> rock.toMutableList()
+            is Techno -> techno.toMutableList()
         }
         vTextView.text = allList.joinToString(", ") {
             it.name
@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
             adapter = recyclerViewAdapter
         }
 
+        allList.add(listType)
     }
     private inline fun <reified T: Genre> setTitleType(genreList: List<T>){
         when{
@@ -85,7 +86,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.mHiphop -> hipHop
+            R.id.mHiphop -> {
+                vTextView.text = hipHop.toMutableList().toString()
+            }
             R.id.mRock -> rock
             R.id.mTechno -> techno
         }
