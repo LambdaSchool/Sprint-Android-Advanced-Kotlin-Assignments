@@ -69,9 +69,9 @@ class MainActivity : AppCompatActivity() {
             layoutManager = viewManager
             adapter = recyclerViewAdapter
         }
-        allList.add(listType)
-        
-
+        allList.add(HipHop("Hip-Hop"))
+        allList.add(Rock("Rock"))
+        allList.add(Techno("Techno"))
 
 
     }
