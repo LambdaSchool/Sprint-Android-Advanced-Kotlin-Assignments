@@ -6,6 +6,7 @@ import com.bluelinelabs.conductor.Conductor
 import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.example.conductorkotlin.controllers.MainController
+import com.example.conductorkotlin.controllers.SecondController
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
         if (!router.hasRootController()){
             router.setRoot(RouterTransaction.with(MainController()))
         }
+        // todo 3 navigating to an other controller
+        router.pushController(RouterTransaction.with(SecondController()))
 
     }
 }
