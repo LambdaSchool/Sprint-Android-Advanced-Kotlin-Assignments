@@ -23,18 +23,13 @@ class MainActivity : AppCompatActivity() {
         router = Conductor.attachRouter(this, controller_container, savedInstanceState)
         // todo 2 check for root controller and set it to the router
         if (!router.hasRootController()){
-            router.setRoot(RouterTransaction.with(MainController())
+            router.setRoot(RouterTransaction.with(MainController(""))
                 // todo 5 setting animation transitions here
                 .popChangeHandler(CustomChangeHandler())
                 .pushChangeHandler(CustomChangeHandler())
             )
         }
-        // todo 3 navigating to an other controller
-        router.pushController(RouterTransaction.with(SecondController())
-            //setting animation transitions here
-            .popChangeHandler(HorizontalChangeHandler())
-            .pushChangeHandler(HorizontalChangeHandler())
-        )
+
 
     }
     // todo 4 navigate back
