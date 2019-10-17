@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+
+
+        <item
+
+            android:id="@+id/mHiphop"
+
+            android:checkable="true"
+
+            android:title="@string/hiphop" />
+
+
+
+        <item
+
+            android:id="@+id/mRock"
+
+            android:checkable="true"
+
+            android:title="@string/rock" />
+
+
+
+        <item
+
+            android:id="@+id/mTechno"
+
+            android:checkable="true"
+
+            android:title="@string/techno"/>
+
+
+
+    </group>
+</menu>

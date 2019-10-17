@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter (private val allGenresList:MutableList<Genre>)
+class RecyclerViewAdapter (private val allList:MutableList<Genre>)
     :RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>(){
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view){
@@ -23,11 +23,11 @@ class RecyclerViewAdapter (private val allGenresList:MutableList<Genre>)
     }
 
     override fun getItemCount(): Int {
-                return allGenresList.size
+                return allList.size
     }
 
     override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
-            holder.genreTextView.setText(allGenresList[position].name)
+        holder.genreTextView.text = allList[position].name
 
 
     }
