@@ -26,4 +26,10 @@ class MainActivity : AppCompatActivity() {
         router.pushController(RouterTransaction.with(SecondController()))
 
     }
+    // todo 4 navigate back
+    override fun onBackPressed() {
+        if (!router.handleBack()) {
+            super.onBackPressed()
+        }
+    }
 }
