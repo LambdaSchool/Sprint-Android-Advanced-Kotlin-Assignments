@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_view.*
 import kotlin.properties.Delegates
 
@@ -86,8 +87,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.mHiphop -> {
-                vTextView.text = hipHop.toMutableList().toString()
+            R.id.mHiphop -> textView.text = hipHop.joinToString(", ") {
+                it.name
             }
             R.id.mRock -> rock
             R.id.mTechno -> techno
