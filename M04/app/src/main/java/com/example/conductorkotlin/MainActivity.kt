@@ -7,6 +7,7 @@ import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.bluelinelabs.conductor.changehandler.FadeChangeHandler
 import com.bluelinelabs.conductor.changehandler.HorizontalChangeHandler
+import com.example.conductorkotlin.controllers.CustomChangeHandler
 import com.example.conductorkotlin.controllers.MainController
 import com.example.conductorkotlin.controllers.SecondController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,8 +25,8 @@ class MainActivity : AppCompatActivity() {
         if (!router.hasRootController()){
             router.setRoot(RouterTransaction.with(MainController())
                 // todo 5 setting animation transitions here
-                .popChangeHandler(FadeChangeHandler())
-                .pushChangeHandler(FadeChangeHandler())
+                .popChangeHandler(CustomChangeHandler())
+                .pushChangeHandler(CustomChangeHandler())
             )
         }
         // todo 3 navigating to an other controller
