@@ -1,4 +1,4 @@
-# Android Git Fundamentals
+# Android Git Fundamentals
 
 ## Introduction
 
